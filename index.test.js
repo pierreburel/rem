@@ -1,19 +1,8 @@
 var sass = require('sass');
 
-function render(data) {
-  return new Promise(function(resolve, reject) {
-    sass.render({ data, includePaths: ['./'] }, function(err, data) {
-      if (err !== null) reject(err);
-      else resolve(data.css.toString());
-    });
-  });
-}
+const render = (data) => sass.compileString(data, { loadPaths: ['./'] }).css;
 
-async function run(input, output, config = `@use "." as rem;`) {
-  const a = await render(config.concat(input));
-  const b = await render(output);
-  expect(a).toEqual(b);
-};
+const run = (input, output, config = `@use "." as rem;`) => expect(render(config.concat(input))).toEqual(render(output));
 
 it('Simple', () => run(
   '.simple { font-size: rem.convert(24px); }',
