@@ -9,20 +9,21 @@
     "fallback"
   ],
   "main": "index.scss",
+  "files": [
+    "_rem.scss",
+    "index.scss",
+    "index.import.scss"
+  ],
   "homepage": "https://github.com/pierreburel/rem/tree/main/packages/sass-rem",
   "bugs": {
     "url": "https://github.com/pierreburel/rem/issues"
   },
   "license": "MIT",
-  "author": "Pierre Burel <pierre.burel@gmail.com>",
+  "author": "Pierre Burel <contact@pierreburel.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/pierreburel/rem.git",
     "directory": "packages/sass-rem"
-  },
-  "devDependencies": {
-    "jest": "^30.2.0",
-    "sass": "^1.96.0"
   },
   "scripts": {
     "test": "jest"

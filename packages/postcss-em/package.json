@@ -10,6 +10,10 @@
     "responsive",
     "typography"
   ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "author": "Pierre Burel <contact@pierreburel.com>",
   "license": "MIT",
   "repository": {
@@ -23,7 +27,6 @@
   "homepage": "https://github.com/pierreburel/rem/tree/main/packages/postcss-em",
   "dependencies": {},
   "devDependencies": {
-    "jest": "^29.7.0",
     "postcss": "^8.4.31"
   },
   "scripts": {

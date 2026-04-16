@@ -8,20 +8,21 @@
     "responsive"
   ],
   "main": "index.scss",
+  "files": [
+    "_em.scss",
+    "index.scss",
+    "index.import.scss"
+  ],
   "homepage": "https://github.com/pierreburel/rem/tree/main/packages/sass-em",
   "bugs": {
     "url": "https://github.com/pierreburel/rem/issues"
   },
   "license": "MIT",
-  "author": "Pierre Burel <pierre.burel@gmail.com>",
+  "author": "Pierre Burel <contact@pierreburel.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/pierreburel/rem.git",
     "directory": "packages/sass-em"
-  },
-  "devDependencies": {
-    "jest": "^30.2.0",
-    "sass": "^1.96.0"
   },
   "scripts": {
     "test": "jest"

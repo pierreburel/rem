@@ -10,6 +10,10 @@
     "responsive",
     "typography"
   ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "author": "Pierre Burel <contact@pierreburel.com>",
   "license": "MIT",
   "repository": {
@@ -24,9 +28,6 @@
   "dependencies": {
     "@pierreburel/rem": "*",
     "postcss": "^8.4.31"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
   },
   "scripts": {
     "test": "jest"

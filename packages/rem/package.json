@@ -12,6 +12,11 @@
   "main": "index.cjs.js",
   "module": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.cjs.js",
+    "index.d.ts"
+  ],
   "scripts": {
     "prepare": "npm run build",
     "build": "rollup -c",
@@ -30,7 +35,6 @@
   },
   "homepage": "https://github.com/pierreburel/rem/tree/main/packages/rem",
   "devDependencies": {
-    "jest": "^29.5.0",
     "rollup": "^3.20.2"
   }
 }
