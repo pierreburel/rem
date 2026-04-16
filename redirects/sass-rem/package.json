@@ -1,0 +1,17 @@
+{
+  "name": "sass-rem",
+  "version": "4.1.0",
+  "description": "Renamed to @pierreburel/sass-rem. This package is a redirect.",
+  "main": "index.scss",
+  "dependencies": {
+    "@pierreburel/sass-rem": "^4.1.0"
+  },
+  "author": "Pierre Burel <pierre.burel@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/rem.git",
+    "directory": "redirects/sass-rem"
+  },
+  "homepage": "https://github.com/pierreburel/rem"
+}

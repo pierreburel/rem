@@ -1,0 +1,19 @@
+{
+  "name": "startijenn-rem",
+  "version": "1.2.0",
+  "description": "Renamed to @pierreburel/rem. This package is a redirect.",
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@pierreburel/rem": "^1.2.0"
+  },
+  "author": "Pierre Burel <contact@pierreburel.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/rem.git",
+    "directory": "redirects/startijenn-rem"
+  },
+  "homepage": "https://github.com/pierreburel/rem"
+}

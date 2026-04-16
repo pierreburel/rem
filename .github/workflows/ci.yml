@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    paths:
+      - "packages/**"
+      - "package.json"
+      - ".github/workflows/ci.yml"
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [sass-rem, sass-em, postcss-rem, rem]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: "npm"
+      - run: npm ci
+      - run: npm test --workspace=packages/${{ matrix.package }}

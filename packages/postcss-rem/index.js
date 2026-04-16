@@ -1,4 +1,4 @@
-const { convert } = require('startijenn-rem');
+const { convert } = require('@pierreburel/rem');
 
 const defaults = {
   name: 'rem-convert',
