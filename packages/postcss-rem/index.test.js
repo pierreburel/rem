@@ -1,8 +1,8 @@
-const postcss = require('postcss');
-const plugin = require('./');
+import postcss from 'postcss';
+import plugin from './index.js';
 
 async function run(input, output, options = {}) {
-  const result = await postcss([plugin(options)]).process(input, { from: undefined })
+  const result = await postcss([plugin(options)]).process(input, { from: undefined });
   expect(result.css).toEqual(output);
   expect(result.warnings()).toHaveLength(0);
 }
@@ -40,40 +40,29 @@ it('In function', () => run(
 it('Pixel fallback', () => run(
   '.fallback { font-size: rem-convert(24px); margin: rem-convert(10px 1.5rem); }',
   '.fallback { font-size: 24px; font-size: 1.5rem; margin: 10px 24px; margin: 0.625rem 1.5rem; }',
-  {
-    fallback: true
-  }
+  { fallback: true }
 ));
 
 it('Convert to pixel', () => run(
   '.convert { font-size: rem-convert(24px); margin: rem-convert(10px 1.5rem); }',
   '.convert { font-size: 24px; margin: 10px 24px; }',
-  {
-    convert: 'px'
-  }
+  { convert: 'px' }
 ));
 
 it('Changing baseline', () => run(
   'html { font-size: 62.5%; } .baseline { font-size: rem-convert(24px); }',
   'html { font-size: 62.5%; } .baseline { font-size: 2.4rem; }',
-  {
-    baseline: 10
-  }
+  { baseline: 10 }
 ));
 
 it('Changing precision', () => run(
   '.precision { font-size: rem-convert(16px); }',
   '.precision { font-size: 1.333rem; }',
-  {
-    baseline: 12,
-    precision: 3
-  }
+  { baseline: 12, precision: 3 }
 ));
 
 it('Changing function name', () => run(
   '.name { font-size: convert-rem(24px); }',
   '.name { font-size: 1.5rem; }',
-  {
-    name: 'convert-rem',
-  }
+  { name: 'convert-rem' }
 ));

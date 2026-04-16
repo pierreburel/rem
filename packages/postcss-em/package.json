@@ -1,6 +1,7 @@
 {
   "name": "@pierreburel/postcss-em",
-  "version": "3.1.0",
+  "version": "4.0.0",
+  "type": "module",
   "description": "PostCSS plugin to convert px in em.",
   "keywords": [
     "postcss",
@@ -10,7 +11,9 @@
     "responsive",
     "typography"
   ],
-  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "files": [
     "index.js"
   ],
@@ -32,6 +35,6 @@
     "postcss": "^8.4.31"
   },
   "scripts": {
-    "test": "jest"
+    "test": "vitest run"
   }
 }

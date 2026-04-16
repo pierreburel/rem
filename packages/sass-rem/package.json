@@ -26,6 +26,7 @@
     "directory": "packages/sass-rem"
   },
   "scripts": {
-    "test": "jest"
-  }
+    "test": "vitest run"
+  },
+  "type": "module"
 }

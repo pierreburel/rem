@@ -1,4 +1,4 @@
-const { convert } = require('@pierreburel/rem');
+import { convert } from '@pierreburel/rem';
 
 const defaults = {
   name: 'rem-convert',
@@ -8,7 +8,7 @@ const defaults = {
   precision: 5
 };
 
-module.exports = (options = {}) => {
+const plugin = (options = {}) => {
   const { name, fallback, convert: to, ...convertOptions } = {...defaults, ...options};
   const regexp = new RegExp('(?!\\W+)' + name + '\\(([^\(\)]+)\\)', 'g');
 
@@ -32,4 +32,5 @@ module.exports = (options = {}) => {
   }
 };
 
-module.exports.postcss = true;
+plugin.postcss = true;
+export default plugin;

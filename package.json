@@ -4,10 +4,10 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "npm test --workspaces"
+    "test": "vitest run --reporter=verbose"
   },
   "devDependencies": {
-    "jest": "^30.0.0",
-    "sass": "^1.96.0"
+    "sass": "^1.96.0",
+    "vitest": "latest"
   }
 }

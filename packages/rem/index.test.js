@@ -1,4 +1,4 @@
-const { rem, px, convert } = require('./index.cjs');
+import { rem, px, convert } from './index.js';
 
 function run(input, output, options = {}, func = rem) {
   const result = func(input, options);
@@ -54,26 +54,19 @@ it('Object', () => run(
 it('Complex object with unitless output', () => run(
   {a: 16, b: [24, 32], c: { d: [48, { e: 64 }] }},
   {a: 1, b: [1.5, 2], c: { d: [3, { e: 4 }] }},
-  {
-    unit: false
-  }
+  { unit: false }
 ));
 
 it('Changing baseline', () => run(
   '24px',
   '2.4rem',
-  {
-    baseline: 10
-  }
+  { baseline: 10 }
 ));
 
 it('Changing precision', () => run(
   '16px',
   '1.333rem',
-  {
-    baseline: 12,
-    precision: 3
-  }
+  { baseline: 12, precision: 3 }
 ));
 
 it('Converting to pixels', () => run(

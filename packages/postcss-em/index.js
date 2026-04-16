@@ -1,11 +1,11 @@
-const { em } = require('@pierreburel/rem');
+import { em } from '@pierreburel/rem';
 
 const defaults = {
   name: 'em-convert',
   precision: 5
 };
 
-module.exports = (options = {}) => {
+const plugin = (options = {}) => {
   const { name, ...convertOptions } = { ...defaults, ...options };
   const regexp = new RegExp('(?!\\W+)' + name + '\\(([^\(\)]+)\\s*,\\s*(\\d*\\.?\\d+)px\\)', 'g');
 
@@ -17,4 +17,5 @@ module.exports = (options = {}) => {
   };
 };
 
-module.exports.postcss = true;
+plugin.postcss = true;
+export default plugin;

@@ -1,5 +1,5 @@
-const postcss = require('postcss');
-const plugin = require('./');
+import postcss from 'postcss';
+import plugin from './index.js';
 
 async function run(input, output, options = {}) {
   const result = await postcss([plugin(options)]).process(input, { from: undefined });

@@ -1,6 +1,7 @@
-var sass = require('sass');
+import sass from 'sass';
+import { fileURLToPath } from 'url';
 
-const render = (data) => sass.compileString(data, { loadPaths: ['./'] }).css;
+const render = (data) => sass.compileString(data, { loadPaths: [fileURLToPath(new URL('.', import.meta.url))] }).css;
 
 const run = (input, output, config = `@use "." as em;`) => expect(render(config.concat(input))).toEqual(render(output));
 

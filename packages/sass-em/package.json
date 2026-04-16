@@ -25,6 +25,7 @@
     "directory": "packages/sass-em"
   },
   "scripts": {
-    "test": "jest"
-  }
+    "test": "vitest run"
+  },
+  "type": "module"
 }
