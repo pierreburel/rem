@@ -1,0 +1,17 @@
+{
+  "name": "postcss-em",
+  "version": "3.1.0",
+  "description": "Renamed to @pierreburel/postcss-em. This package is a redirect.",
+  "main": "index.js",
+  "dependencies": {
+    "@pierreburel/postcss-em": "^3.1.0"
+  },
+  "author": "Pierre Burel <contact@pierreburel.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/rem.git",
+    "directory": "redirects/postcss-em"
+  },
+  "homepage": "https://github.com/pierreburel/rem"
+}

@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: [sass-rem, sass-em, postcss-rem, rem]
+        package: [sass-rem, sass-em, postcss-rem, postcss-em, rem]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

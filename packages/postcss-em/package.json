@@ -1,6 +1,6 @@
 {
-  "name": "postcss-em",
-  "version": "3.0.0",
+  "name": "@pierreburel/postcss-em",
+  "version": "3.1.0",
   "description": "PostCSS plugin to convert px in em.",
   "keywords": [
     "postcss",
@@ -12,11 +12,15 @@
   ],
   "author": "Pierre Burel <contact@pierreburel.com>",
   "license": "MIT",
-  "repository": "pierreburel/postcss-em",
-  "bugs": {
-    "url": "https://github.com/pierreburel/postcss-em/issues"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/rem.git",
+    "directory": "packages/postcss-em"
   },
-  "homepage": "https://github.com/pierreburel/postcss-em",
+  "bugs": {
+    "url": "https://github.com/pierreburel/rem/issues"
+  },
+  "homepage": "https://github.com/pierreburel/rem/tree/main/packages/postcss-em",
   "dependencies": {},
   "devDependencies": {
     "jest": "^29.7.0",

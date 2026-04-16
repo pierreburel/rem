@@ -9,6 +9,7 @@ Monorepo for rem/em unit conversion tools.
 | [@pierreburel/sass-rem](packages/sass-rem/)       | Sass function and mixin to use rem units with optional pixel fallback | [![npm](https://img.shields.io/npm/v/@pierreburel/sass-rem)](https://www.npmjs.com/package/@pierreburel/sass-rem)       |
 | [@pierreburel/sass-em](packages/sass-em/)         | Sass function and mixin to convert px to em                           | [![npm](https://img.shields.io/npm/v/@pierreburel/sass-em)](https://www.npmjs.com/package/@pierreburel/sass-em)         |
 | [@pierreburel/postcss-rem](packages/postcss-rem/) | PostCSS plugin to use rem units with optional pixel fallback          | [![npm](https://img.shields.io/npm/v/@pierreburel/postcss-rem)](https://www.npmjs.com/package/@pierreburel/postcss-rem) |
+| [@pierreburel/postcss-em](packages/postcss-em/)   | PostCSS plugin to convert px to em                                    | [![npm](https://img.shields.io/npm/v/@pierreburel/postcss-em)](https://www.npmjs.com/package/@pierreburel/postcss-em)   |
 | [@pierreburel/rem](packages/rem/)                 | JavaScript function to convert CSS rem units                          | [![npm](https://img.shields.io/npm/v/@pierreburel/rem)](https://www.npmjs.com/package/@pierreburel/rem)                 |
 
 ## Migrating from old package names
@@ -20,6 +21,7 @@ The packages were previously published as `sass-rem`, `sass-em`, `postcss-rem`, 
 | `sass-rem`       | `@pierreburel/sass-rem`    |
 | `sass-em`        | `@pierreburel/sass-em`     |
 | `postcss-rem`    | `@pierreburel/postcss-rem` |
+| `postcss-em`     | `@pierreburel/postcss-em`  |
 | `startijenn-rem` | `@pierreburel/rem`         |
 
 ## Development
