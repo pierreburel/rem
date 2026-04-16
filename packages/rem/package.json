@@ -1,0 +1,32 @@
+{
+  "name": "startijenn-rem",
+  "version": "1.1.1",
+  "description": "JavaScript function to convert CSS rem units.",
+  "keywords": [
+    "javascript",
+    "css",
+    "rem",
+    "responsive",
+    "typography"
+  ],
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "test": "jest"
+  },
+  "author": "Pierre Burel <contact@pierreburel.com>",
+  "license": "MIT",
+  "repository": "pierreburel/startijenn-rem",
+  "bugs": {
+    "url": "https://github.com/pierreburel/startijenn-rem/issues"
+  },
+  "homepage": "https://github.com/pierreburel/startijenn-rem",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "rollup": "^3.20.2"
+  }
+}
