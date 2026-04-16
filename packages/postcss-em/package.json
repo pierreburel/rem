@@ -1,0 +1,28 @@
+{
+  "name": "postcss-em",
+  "version": "3.0.0",
+  "description": "PostCSS plugin to convert px in em.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "em",
+    "responsive",
+    "typography"
+  ],
+  "author": "Pierre Burel <contact@pierreburel.com>",
+  "license": "MIT",
+  "repository": "pierreburel/postcss-em",
+  "bugs": {
+    "url": "https://github.com/pierreburel/postcss-em/issues"
+  },
+  "homepage": "https://github.com/pierreburel/postcss-em",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "postcss": "^8.4.31"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
