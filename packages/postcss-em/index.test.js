@@ -1,12 +1,10 @@
 const postcss = require('postcss');
 const plugin = require('./');
 
-function run(input, output, opts = {}) {
-  return postcss([ plugin(opts) ]).process(input, { from: undefined })
-    .then(result => {
-      expect(result.css).toEqual(output);
-      expect(result.warnings().length).toBe(0);
-    });
+async function run(input, output, options = {}) {
+  const result = await postcss([plugin(options)]).process(input, { from: undefined });
+  expect(result.css).toEqual(output);
+  expect(result.warnings()).toHaveLength(0);
 }
 
 it('Simple', () => run(
@@ -42,15 +40,11 @@ it('In function', () => run(
 it('Changing precision', () => run(
   '.precision { font-size: em-convert(1px, 3px); }',
   '.precision { font-size: 0.333em; }',
-  {
-    precision: 3
-  }
+  { precision: 3 }
 ));
 
 it('Changing name', () => run(
   '.name { font-size: convert-em(24px, 16px); }',
   '.name { font-size: 1.5em; }',
-  {
-    name: 'convert-em'
-  }
+  { name: 'convert-em' }
 ));

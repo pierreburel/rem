@@ -25,7 +25,9 @@
     "url": "https://github.com/pierreburel/rem/issues"
   },
   "homepage": "https://github.com/pierreburel/rem/tree/main/packages/postcss-em",
-  "dependencies": {},
+  "dependencies": {
+    "@pierreburel/rem": "*"
+  },
   "devDependencies": {
     "postcss": "^8.4.31"
   },
