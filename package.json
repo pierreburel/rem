@@ -7,7 +7,7 @@
     "test": "vitest run --reporter=verbose"
   },
   "devDependencies": {
-    "sass": "^1.96.0",
+    "sass": "^1.99.0",
     "vitest": "latest"
   }
 }
