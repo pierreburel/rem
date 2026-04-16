@@ -13,6 +13,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "jest"
