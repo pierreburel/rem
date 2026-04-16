@@ -1,0 +1,60 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
+// Dart Sass <1.33.0 compatibility
+@function _divide($a, $b) {
+  @if map.has-key(meta.module-functions("math"), "div") {
+    @return math.div($a, $b);
+  } @else {
+    @return $a / $b;
+  }
+}
+
+@function convert($values...) {
+  $context: list.nth($values, list.length($values));
+  $result: ();
+  $separator: list.separator($values);
+
+  @for $i from 1 through list.length($values) - 1 {
+    $value: list.nth($values, $i);
+    @if meta.type-of($value) == "number" and math.unit($value) == "px" {
+      $result: list.append($result, _divide($value, $context) * 1em, $separator);
+    } @else if meta.type-of($value) == "list" {
+      $result: list.append($result, em(list.append($value, $context)...), $separator);
+    } @else {
+      $result: list.append($result, $value, $separator);
+    }
+  }
+
+  @if list.length($result) == 1 {
+    @return list.nth($result, 1);
+  } @else {
+    @return $result;
+  }
+}
+
+@mixin convert($properties, $context) {
+  @each $property in map.keys($properties) {
+    #{$property}: em(list.append(map.get($properties, $property), $context)...);
+  }
+}
+
+// Proxy when used with a different namespace
+@function em($values...) {
+  @return convert($values...);
+}
+
+@mixin em($properties, $context) {
+  @include convert($properties, $context);
+}
+
+// Proxy when imported globally
+@function em-convert($values...) {
+  @return convert($values...);
+}
+
+@mixin em-convert($properties, $context) {
+  @include convert($properties, $context);
+}

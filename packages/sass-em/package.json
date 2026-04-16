@@ -1,0 +1,28 @@
+{
+  "name": "sass-em",
+  "version": "3.0.1",
+  "description": "Sass function and mixin to convert px in em.",
+  "keywords": [
+    "sass",
+    "em",
+    "responsive"
+  ],
+  "main": "index.scss",
+  "homepage": "https://github.com/pierreburel/sass-em",
+  "bugs": {
+    "url": "https://github.com/pierreburel/sass-em/issues"
+  },
+  "license": "MIT",
+  "author": "Pierre Burel <pierre.burel@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/sass-em.git"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "sass": "^1.96.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
