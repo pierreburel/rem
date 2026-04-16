@@ -1,12 +1,12 @@
-# sass-rem [![Node.js CI](https://github.com/pierreburel/sass-rem/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/sass-rem/actions/workflows/node.js.yml)
+# @pierreburel/sass-rem [![CI](https://github.com/pierreburel/rem/actions/workflows/ci.yml/badge.svg)](https://github.com/pierreburel/rem/actions/workflows/ci.yml)
 
 Sass function and mixin to use rem units with optional pixel fallback.
 
 ## Breaking changes
 
-- **4.0**: changed default function name when imported globally (`@use "rem" as *;` or `@import "sass-rem";`) to `rem-convert`, as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). It shouldn't change anything if you used Sass Modules introduced in 3.0 (`rem.convert`).
+- **4.0**: changed default function name when imported globally (`@use "rem" as *;` or `@import "@pierreburel/sass-rem";`) to `rem-convert`, as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). It shouldn't change anything if you used Sass Modules introduced in 3.0 (`rem.convert`).
 
-- **3.0**: now using [Sass Modules](https://sass-lang.com/blog/the-module-system-is-launched), using `@use` and `rem` is renamed to `rem.convert`. You could still use `@import` with no changes (see usage below), but **if you need LibSass/node-sass and Ruby Sass support (both deprecated), you should stay on 2.0** (which works fine) or use the [PostCSS](https://github.com/pierreburel/postcss-rem) version.
+- **3.0**: now using [Sass Modules](https://sass-lang.com/blog/the-module-system-is-launched), using `@use` and `rem` is renamed to `rem.convert`. You could still use `@import` with no changes (see usage below), but **if you need LibSass/node-sass and Ruby Sass support (both deprecated), you should stay on 2.0** (which works fine) or use the [PostCSS](https://github.com/pierreburel/rem/tree/main/packages/postcss-rem) version.
 
 - **2.0**: `$rem-fallback` is now set to `false` ([see support](http://caniuse.com/#feat=rem)) and `$rem-baseline` to `16px` by default.
 
@@ -16,8 +16,8 @@ Sass function and mixin to use rem units with optional pixel fallback.
 
 Install with [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/):
 
-* `yarn add sass-rem`
-* `npm install sass-rem`
+* `yarn add @pierreburel/sass-rem`
+* `npm install @pierreburel/sass-rem`
 
 ---
 
@@ -26,9 +26,8 @@ Install with [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/):
 Import in your project depending of your setup:
 
 ```scss
-@use "rem";
-// or @use "~sass-rem" as rem;
-// or @use "../node_modules/sass-rem" as rem;
+@use "@pierreburel/sass-rem" as rem;
+// or @use "../node_modules/@pierreburel/sass-rem" as rem;
 
 .demo {
   font-size: rem.convert(24px); // Simple
@@ -63,7 +62,7 @@ Will output:
 You can change the namespace when importing and use `rem` function and mixin instead of `convert`:
 
 ```scss
-@use "rem" as to; // Because why not?
+@use "@pierreburel/sass-rem" as to; // Because why not?
 
 .demo {
   font-size: to.rem(24px);
@@ -73,7 +72,7 @@ You can change the namespace when importing and use `rem` function and mixin ins
 Or you can even load the library globally (but beware of conflicts, avoided by the idea of modules):
 
 ```scss
-@use "rem" as *;
+@use "@pierreburel/sass-rem" as *;
 
 .demo {
   font-size: rem-convert(24px);
@@ -87,7 +86,7 @@ Or you can even load the library globally (but beware of conflicts, avoided by t
 You can enable pixel fallback by setting `$fallback` to `true`, but you will have to use the mixin instead of the function. The mixin accepts a map to convert multiple properties at once too:
 
 ```scss
-@use "rem" with (
+@use "@pierreburel/sass-rem" as rem with (
   $fallback: true
 );
 
@@ -142,11 +141,11 @@ You can totally disable rem units by setting `$px-only` to `true` (for a lt-ie9 
 
 ## Changing baseline
 
-By default, sass-rem now uses a 16px baseline, but you can change this value with `$baseline` and by using the `baseline` mixin on the html element to adjust the root font size. The `rem` function and mixin will calculate rem values accordingly.
+By default, @pierreburel/sass-rem uses a 16px baseline, but you can change this value with `$baseline` and by using the `baseline` mixin on the html element to adjust the root font size. The `rem` function and mixin will calculate rem values accordingly.
 For example, you can set `$baseline` to 10px to have a root font size of 62.5% and improve readability (10px = 1rem), which was the pre-2.0 behavior:
 
 ```scss
-@use "rem" with (
+@use "@pierreburel/sass-rem" as rem with (
   $baseline: 10px
 );
 
@@ -176,7 +175,7 @@ html {
 You can also change the baseline zoom by passing the desired zoom to the `baseline` mixin which will calculate it depending of `$baseline`. Useful for creating responsive typography depending on viewport, especially with a different baseline than 16px:
 
 ```scss
-@use "rem" with (
+@use "@pierreburel/sass-rem" as rem with (
   $baseline: 10px
 );
 
@@ -218,9 +217,8 @@ html {
 If you don't want to use Sass Modules, you can still use `@import` with `rem-convert` function, mixin and namespaced `$rem-*` variables:
 
 ```scss
-@import "sass-rem";
-// or @import "~sass-rem";
-// or @import "../node_modules/sass-rem";
+@import "@pierreburel/sass-rem";
+// or @import "../node_modules/@pierreburel/sass-rem";
 
 $rem-baseline: 10px;
 
@@ -233,6 +231,6 @@ $rem-baseline: 10px;
 
 ## See also
 
-- PostCSS version: https://github.com/pierreburel/postcss-rem
-- JavaScript version: https://github.com/pierreburel/startijenn-rem
-- `sass-em` https://github.com/pierreburel/sass-em
+- PostCSS version: https://github.com/pierreburel/rem/tree/main/packages/postcss-rem
+- JavaScript version: https://github.com/pierreburel/rem/tree/main/packages/rem
+- `@pierreburel/sass-em`: https://github.com/pierreburel/rem/tree/main/packages/sass-em

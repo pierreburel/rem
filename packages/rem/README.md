@@ -1,13 +1,13 @@
-# startijenn-rem [![Node.js CI](https://github.com/pierreburel/startijenn-rem/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/startijenn-rem/actions/workflows/node.js.yml)
+# @pierreburel/rem [![CI](https://github.com/pierreburel/rem/actions/workflows/ci.yml/badge.svg)](https://github.com/pierreburel/rem/actions/workflows/ci.yml)
 
-JavaScript function to convert CSS rem units. Used by [postcss-rem](https://github.com/pierreburel/postcss-rem).
+JavaScript function to convert CSS rem units. Used by [@pierreburel/postcss-rem](https://github.com/pierreburel/rem/tree/main/packages/postcss-rem).
 
 ## Usage
 
-Install with `npm i startijenn-rem`.
+Install with `npm i @pierreburel/rem`.
 
 ```js
-import rem, { em, px, convert } from "startijenn-rem";
+import rem, { em, px, convert } from "@pierreburel/rem";
 
 const unitless = rem(24);
 // '1.5rem'
@@ -63,7 +63,7 @@ const h1 = (text) => <StyledComponent fontSize={24}>{text}</StyledComponent>;
 You can change the default options of the functions by doing your own aliases.
 
 ```js
-import { convert } from "startijenn-rem";
+import { convert } from "@pierreburel/rem";
 
 export const rem = (value) => convert(value, "rem", { baseline: 10 });
 

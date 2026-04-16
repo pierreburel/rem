@@ -1,10 +1,10 @@
-# postcss-rem [![Node.js CI](https://github.com/pierreburel/postcss-rem/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/postcss-rem/actions/workflows/node.js.yml)
+# @pierreburel/postcss-rem [![CI](https://github.com/pierreburel/rem/actions/workflows/ci.yml/badge.svg)](https://github.com/pierreburel/rem/actions/workflows/ci.yml)
 
-[PostCSS] plugin to use rem units with optional pixel fallback. Based on [sass-rem](https://github.com/pierreburel/sass-rem).
+[PostCSS] plugin to use rem units with optional pixel fallback. Based on [@pierreburel/sass-rem](https://github.com/pierreburel/rem/tree/main/packages/sass-rem).
 
 **Breaking change in 3.0**: changed default function name to `rem-convert` as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). You can revert back by setting `name` option to `'rem'` (see [usage](#usage)).
 
-See also: [startijenn-rem](https://github.com/pierreburel/startijenn-rem), vanilla JavaScript version.
+See also: [@pierreburel/rem](https://github.com/pierreburel/rem/tree/main/packages/rem), vanilla JavaScript version.
 
 [postcss]: https://github.com/postcss/postcss
 
@@ -75,17 +75,19 @@ With `convert` to `px` (for a lt-ie9 only stylesheet for example):
 
 ## Usage
 
-Install with `npm i postcss-rem` and use with [PostCSS]:
+Install with `npm i @pierreburel/postcss-rem` and use with [PostCSS]:
 
 ```js
-postcss([require("postcss-rem")]);
+import postcssRem from "@pierreburel/postcss-rem";
+
+postcss([postcssRem()]);
 ```
 
 Example with custom options:
 
 ```js
 postcss([
-  require("postcss-rem")({
+  postcssRem({
     name: "convert-rem", // Default to 'rem-convert'
     baseline: 10,        // Default to 16
     // convert: "px",    // Default to 'rem'

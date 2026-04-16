@@ -1,12 +1,12 @@
-# sass-em [![Node.js CI](https://github.com/pierreburel/sass-em/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/sass-em/actions/workflows/node.js.yml)
+# @pierreburel/sass-em [![CI](https://github.com/pierreburel/rem/actions/workflows/ci.yml/badge.svg)](https://github.com/pierreburel/rem/actions/workflows/ci.yml)
 
 Sass function and mixin to convert px in em.
 
 ## Breaking changes
 
-- **3.0**: changed default function name when imported globally (`@use "rem" as *;` or `@import "sass-rem";`) to `em-convert` to match [sass-rem](https://github.com/pierreburel/sass-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). It shouldn't change anything if you used Sass Modules introduced in 2.0 (`em.convert`).
+- **3.0**: changed default function name when imported globally (`@use "@pierreburel/sass-em" as *;` or `@import "@pierreburel/sass-em";`) to `em-convert` to match [@pierreburel/sass-rem](https://github.com/pierreburel/rem/tree/main/packages/sass-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). It shouldn't change anything if you used Sass Modules introduced in 2.0 (`em.convert`).
 
-- **2.0**: now using [Sass Modules](https://sass-lang.com/blog/the-module-system-is-launched), using `@use` and `em` is renamed to `em.convert`. You could still use `@import` with no changes (see usage below), but **if you need LibSass/node-sass and Ruby Sass support (both deprecated), you should stay on 1.0** (which works fine) or use the [PostCSS](https://github.com/pierreburel/postcss-em) version.
+- **2.0**: now using [Sass Modules](https://sass-lang.com/blog/the-module-system-is-launched), using `@use` and `em` is renamed to `em.convert`. You could still use `@import` with no changes (see usage below), but **if you need LibSass/node-sass and Ruby Sass support (both deprecated), you should stay on 1.0** (which works fine) or use the [PostCSS](https://github.com/pierreburel/rem/tree/main/packages/postcss-em) version.
 
 ---
 
@@ -14,8 +14,8 @@ Sass function and mixin to convert px in em.
 
 Install with [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/):
 
-* `yarn add sass-em`
-* `npm install sass-em`
+* `yarn add @pierreburel/sass-em`
+* `npm install @pierreburel/sass-em`
 
 ---
 
@@ -29,9 +29,8 @@ The `em.convert` mixin takes only 2 parameters: the properties (map of `property
 Import in your project depending of your setup:
 
 ```scss
-@use "em";
-// or @use "~sass-em" as em;
-// or @use "../node_modules/sass-em" as em;
+@use "@pierreburel/sass-em" as em;
+// or @use "../node_modules/@pierreburel/sass-em" as em;
 
 $base-font-size: 16px;
 $h1-font-size: 24px;
@@ -65,7 +64,7 @@ Will output :
 You can change the namespace when importing and use `em` function and mixin instead of `convert`:
 
 ```scss
-@use "em" as to; // Because why not?
+@use "@pierreburel/sass-em" as to; // Because why not?
 
 .demo {
   font-size: to.em(24px, 16px);
@@ -75,7 +74,7 @@ You can change the namespace when importing and use `em` function and mixin inst
 Or you can even load the library globally (but beware of conflicts, avoided by the idea of modules):
 
 ```scss
-@use "em" as *;
+@use "@pierreburel/sass-em" as *;
 
 .demo {
   font-size: em-convert(24px, 16px);
@@ -89,7 +88,7 @@ Or you can even load the library globally (but beware of conflicts, avoided by t
 If you don't want to use Sass Modules, you can still use `@import` with `em-convert` function and mixin:
 
 ```scss
-@import "sass-em";
+@import "@pierreburel/sass-em";
 
 .demo {
   font-size: em-convert(24px);
@@ -100,5 +99,5 @@ If you don't want to use Sass Modules, you can still use `@import` with `em-conv
 
 ## See also
 
-- PostCSS version: https://github.com/pierreburel/postcss-em
-- `sass-rem`: https://github.com/pierreburel/sass-rem
+- PostCSS version: https://github.com/pierreburel/rem/tree/main/packages/postcss-em
+- `@pierreburel/sass-rem`: https://github.com/pierreburel/rem/tree/main/packages/sass-rem

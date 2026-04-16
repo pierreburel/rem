@@ -1,8 +1,8 @@
-# postcss-em [![Node.js CI](https://github.com/pierreburel/postcss-em/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/postcss-em/actions/workflows/node.js.yml)
+# @pierreburel/postcss-em [![CI](https://github.com/pierreburel/rem/actions/workflows/ci.yml/badge.svg)](https://github.com/pierreburel/rem/actions/workflows/ci.yml)
 
-[PostCSS] plugin to convert px in em. Based on [sass-em](https://github.com/pierreburel/sass-em).
+[PostCSS] plugin to convert px in em. Based on [@pierreburel/sass-em](https://github.com/pierreburel/rem/tree/main/packages/sass-em).
 
-**Breaking change in 3.0**: changed default function name to `em-convert` to match [postcss-rem](https://github.com/pierreburel/postcss-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). You can revert back by setting `name` option to `'em'` (see [usage](#usage)).
+**Breaking change in 3.0**: changed default function name to `em-convert` to match [@pierreburel/postcss-rem](https://github.com/pierreburel/rem/tree/main/packages/postcss-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). You can revert back by setting `name` option to `'em'` (see [usage](#usage)).
 
 [postcss]: https://github.com/postcss/postcss
 
@@ -45,19 +45,23 @@ There can be multiple comma-separated values (eg. multiple box shadow), but the 
 
 ## Usage
 
-Install with `npm i postcss-em` and use with [PostCSS]:
+Install with `npm i @pierreburel/postcss-em` and use with [PostCSS]:
 
 ```js
-postcss([require("postcss-em")]);
+import postcssEm from "@pierreburel/postcss-em";
+
+postcss([postcssEm()]);
 ```
 
 Example with custom options:
 
 ```js
-postcss([ require('postcss-em')({
-  precision: 6       // Default to 5
-  name: 'convert-em' // Default to 'em-convert'
-}) ])
+postcss([
+  postcssEm({
+    precision: 6,        // Default to 5
+    name: 'convert-em',  // Default to 'em-convert'
+  }),
+]);
 ```
 
 See [PostCSS] docs for examples for your environment.
